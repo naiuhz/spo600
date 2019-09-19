@@ -35,7 +35,7 @@ loopsg:
 
 	mov    $48,%r14			/* moved 48 to r14*/
 	add    %r15,%r14		/* added r15 to r14 */
-	mov    %r14b,msg+6		/* added number after 'Loop' */
+	mov    %r14b,msg+7		/* added number after 'Loop' */
         mov    $len,%rdx		/* message length */
         mov    $msg,%rsi		/* message location */
         mov    $1,%rdi			/* file descriptor stdout */
