@@ -28,13 +28,13 @@ loop:
         mov    $1,%rax                  /* syscall sys_write */
         syscall
 
-    inc     %r15                /* increment index */
-    cmp     $max,%r15           /* see if we're done */
-    jne     loop                /* loop if we're not */
+	inc     %r15			/* increment index */
+	cmp     $max,%r15		/* see if we're done */
+	jne     loop			/* loop if we're not */
 
-    mov     $0,%rdi             /* exit status */
-    mov     $60,%rax            /* syscall sys_exit */
-    syscall
+	mov     $0,%rdi			/* exit status */
+	mov     $60,%rax		/* syscall sys_exit */
+	syscall
 
 .section .data
 
