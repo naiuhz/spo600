@@ -11,7 +11,7 @@ _start:
 
 loop:
     mov     x2,len              /* message length syscall args*/
-    adr     x1,message          /* message location syscall args*/
+    adr     x1,msg              /* message location syscall args*/
 
     mov     x28,divisor         /* store 10 (divisor) in x28 */
     udiv    x23,x20,x28         /* divide index (x20) by 10 (x28), store quotient into x23; remainer discarded */
