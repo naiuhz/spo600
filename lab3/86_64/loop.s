@@ -2,18 +2,20 @@
 .globl    _start
 
 start = 0                       /* starting value for the loop index; note that this is a symbol (constant), not a variable */
-max = 35                        /* loop exits when the index hits this number (loop condition is i<max) */
+max = 31                        /* loop exits when the index hits this number (loop condition is i<max) */
+divisor = 10
+zero = 48	
 
 _start:
     mov     $start,%r15         /* loop index */
 
 loopmd:
 
-	cmp    $10,%r15			/* see if loop index is less than 10 */
+	cmp    $divisor,%r15		/* see if loop index is less than 10 */
 	jl     loopsg
-	mov    $10,%r13			/* moved 10 to r13 */
+	mov    $divisor,%r13		/* moved 10 to r13 */
 	mov    %r15,%rax		/* moved r15 to rax */
-	mov    $48,%r14			/* moved 48 to r14*/
+	mov    $zero,%r14		/* moved 48 to r14*/
 	mov    $0,%rdx			/* moved 0 to rdx */
 
 	div    %r13			/* divided rax by r13 (loop index by 10) */
@@ -33,7 +35,7 @@ loopmd:
 
 loopsg:
 
-	mov    $48,%r14			/* moved 48 to r14*/
+	mov    $zero,%r14		/* moved 48 to r14*/
 	add    %r15,%r14		/* added r15 to r14 */
 	mov    %r14b,msg+7		/* added number after 'Loop' */
         mov    $len,%rdx		/* message length */
